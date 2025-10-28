@@ -80,7 +80,7 @@ function Footer() {
 
           <div className="footer-col">
             <h4>HELLO</h4>
-            <p><a href="mailto:jeremyjosephpohar@gmail.com">jeremyjosephpohar@gmail.com</a></p>
+            <p><a href="mailto:jeremy.yosep@gmail.com">jeremy.yosep@gmail.com</a></p>
             <p className="address">
               Jakarta, Indonesia
             </p>
