@@ -1,0 +1,475 @@
+/* Home Section */
+#home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Black Bar Overlay - Blocks Duplicate Model */
+#home::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px; /* Reduced for desktop */
+  background: linear-gradient(to top, #000000 0%, #000000 60%, transparent 100%);
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* Top Left - Title */
+.home-top-left {
+  position: absolute;
+  top: 6rem;
+  left: 3rem;
+  z-index: 10;
+}
+
+.home-top-left h2 {
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.home-top-left p {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  color: #808080;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Top Right - Vertical Time */
+.home-top-right {
+  position: absolute;
+  top: 6rem;
+  right: 3rem;
+  z-index: 10;
+}
+
+.vertical-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.time-char {
+  font-family: var(--font-accent);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+.time-label {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  color: #808080;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Center - 3D Model */
+.model-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 70vh;
+  max-width: 800px;
+  z-index: 5;
+  overflow: hidden;
+  clip-path: inset(0);
+}
+
+/* Ensure Canvas is visible */
+.model-container canvas {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Bottom Left - CTA Button + Quote */
+.home-bottom-left {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  z-index: 10;
+  max-width: 450px;
+}
+
+.cta-button {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 2.2rem;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: inline-block;
+  text-transform: none;
+  z-index: 10;
+}
+
+.cta-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 10px 30px rgba(255, 255, 255, 0.15),
+    0 0 40px rgba(255, 255, 255, 0.08);
+}
+
+.cta-button:active {
+  transform: translateY(-1px);
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cta-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.home-quote {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  max-width: 400px;
+}
+
+.home-year {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  color: #808080;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Bottom Right - Status Card */
+.home-bottom-right {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 10;
+}
+
+.status-card {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  padding: 1.5rem;
+  width: 280px;
+}
+
+.status-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.status-preview span {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  color: #808080;
+  letter-spacing: 2px;
+}
+
+.status-title {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin: 0 0 1rem 0;
+}
+
+.status-link {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 2px;
+  display: inline-block;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 2px;
+  transition: opacity 0.3s ease;
+}
+
+.status-link:hover {
+  opacity: 0.6;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  animation: bounce 2s infinite;
+  z-index: 10;
+}
+
+.arrow {
+  font-size: 1.2rem;
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: translate(-50%, 0); 
+  }
+  50% { 
+    transform: translate(-50%, -10px); 
+  }
+}
+
+/* ========================================
+   RESPONSIVE - TABLETS
+======================================== */
+@media (max-width: 1200px) {
+  .model-container {
+    width: 60vw;
+    height: 60vh;
+  }
+
+  /* Slightly taller bar for tablets */
+  #home::after {
+    height: 150px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (968px and below)
+======================================== */
+@media (max-width: 968px) {
+  /* Taller black bar for mobile */
+  #home::after {
+    height: 250px;
+    background: linear-gradient(to top, #000000 0%, #000000 85%, transparent 100%);
+  }
+
+  #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 7rem 1.5rem 2rem;
+    overflow-y: auto;
+    gap: 1.5rem;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .home-top-left {
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    order: 1;
+  }
+
+  .home-top-left h2 {
+    font-size: 0.8rem;
+  }
+
+  .home-top-left p {
+    font-size: 0.7rem;
+  }
+
+  .home-top-right {
+    display: none;
+  }
+
+  /* 3D Model */
+  .model-container {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    height: 350px !important;
+    min-height: 350px !important;
+    margin: 0 auto !important;
+    order: 2;
+    overflow: visible !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 5 !important;
+  }
+
+  .model-container canvas {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .home-bottom-left {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    order: 3;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+
+  .home-quote {
+    font-size: 0.75rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .home-year {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  .home-bottom-right {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    order: 4;
+  }
+
+  .status-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .scroll-indicator {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    margin-top: 1rem;
+    order: 5;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE
+======================================== */
+@media (max-width: 480px) {
+  /* Even taller black bar for small screens */
+  #home::after {
+    height: 280px;
+  }
+
+  #home {
+    padding: 6rem 1rem 1.5rem;
+    gap: 1.2rem;
+  }
+
+  .home-top-left h2 {
+    font-size: 0.7rem;
+  }
+
+  .home-top-left p {
+    font-size: 0.65rem;
+  }
+
+  .model-container {
+    height: 300px !important;
+    min-height: 300px !important;
+    max-width: 100% !important;
+  }
+
+  .cta-button {
+    padding: 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .home-quote {
+    font-size: 0.7rem;
+  }
+
+  .home-year {
+    font-size: 0.65rem;
+  }
+
+  .status-card {
+    padding: 1.2rem;
+  }
+
+  .status-preview span {
+    font-size: 0.65rem;
+  }
+
+  .status-title {
+    font-size: 0.9rem;
+  }
+
+  .status-link {
+    font-size: 0.7rem;
+  }
+}

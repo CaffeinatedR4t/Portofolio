@@ -1,0 +1,87 @@
+# ============================================
+# SECRETS & ENVIRONMENT VARIABLES
+# ============================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+**/.env
+**/backend/.env
+
+# API Keys & Tokens
+*.pem
+*.key
+*.secret
+
+# ============================================
+# DEPENDENCIES
+# ============================================
+node_modules/
+**/node_modules/
+Portofolio/backend/node_modules/
+Portofolio/vite-project/node_modules/
+
+# Lock files (optional - some keep these)
+package-lock.json
+yarn.lock
+
+# ============================================
+# BUILD OUTPUTS
+# ============================================
+# Vite/React
+dist/
+build/
+.next/
+out/
+
+# Backend
+backend/dist/
+backend/build/
+
+# ============================================
+# VERCEL
+# ============================================
+.vercel
+*.vercel.json
+
+# ============================================
+# LOGS
+# ============================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# ============================================
+# OS FILES
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# ============================================
+# IDE & EDITORS
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ============================================
+# TESTING
+# ============================================
+coverage/
+.nyc_output/
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+tmp/
+temp/
+*.tmp
+*.bak

@@ -1,0 +1,125 @@
+import './Footer.css'
+
+function Footer() {
+  const currentYear = new Date().getFullYear()
+
+  const scrollToTop = (e) => {
+    e.preventDefault()
+    const homeSection = document.getElementById('home') || document.body
+    
+    if (window.lenis) {
+      window.lenis.scrollTo(homeSection, {
+        offset: 0,
+        duration: 2.5,
+        easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+      })
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault()
+    const targetSection = document.getElementById(sectionId)
+    
+    if (targetSection) {
+      if (window.lenis) {
+        window.lenis.scrollTo(targetSection, {
+          offset: -80,
+          duration: 2,
+          easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+        })
+      } else {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }
+
+  const scrollToContact = (e) => {
+    e.preventDefault()
+    const contactSection = document.getElementById('contact')
+    
+    if (contactSection) {
+      if (window.lenis) {
+        window.lenis.scrollTo(contactSection, {
+          offset: -80,
+          duration: 2,
+          easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+        })
+      } else {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }
+
+  return (
+    <footer className="footer">
+      <div className="footer-cta">
+        <h2>READY TO DISCUSS<br />YOUR NEXT PROJECT?</h2>
+        <button onClick={scrollToContact} className="arrow-button">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+            <rect x="1" y="1" width="78" height="78" stroke="currentColor" strokeWidth="1"/>
+            <path d="M25 30 L50 40 L25 50" stroke="currentColor" strokeWidth="2" fill="none"/>
+          </svg>
+        </button>
+      </div>
+
+      <div className="footer-main">
+        <div className="footer-grid">
+          <div className="footer-col">
+            <div className="footer-logo">
+              <svg width="40" height="40" viewBox="0 0 40 40">
+                <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" 
+                      fontSize="18" fontWeight="bold" fill="currentColor">
+                  JJP
+                </text>
+              </svg>
+              <h3>WORK WITH ME</h3>
+            </div>
+          </div>
+
+          <div className="footer-col">
+            <h4>HELLO</h4>
+            <p><a href="mailto:jeremyjosephpohar@gmail.com">jeremyjosephpohar@gmail.com</a></p>
+            <p className="address">
+              Jakarta, Indonesia
+            </p>
+          </div>
+
+          <div className="footer-col">
+            <h4>SOCIAL</h4>
+            <ul>
+              <li><a href="https://instagram.com/jrmy.jp" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li>
+              <li><a href="https://www.linkedin.com/in/jeremyjosephpohar/" target="_blank" rel="noopener noreferrer">LINKEDIN</a></li>
+              <li><a href="https://github.com/CaffeinatedR4t" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4>OTHER</h4>
+            <ul>
+              <li><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>PROJECTS</a></li>
+              <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>ABOUT</a></li>
+              <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>CONTACT</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <div className="footer-bottom-left">
+          <div className="footer-brand">JJP</div>
+          <p>All content ©<br />Jeremy Joseph Pohar {currentYear}</p>
+        </div>
+        <div className="footer-bottom-center">
+          <p>Portfolio by Jeremy Joseph Pohar</p>
+        </div>
+        <button className="back-to-top" onClick={scrollToTop}>
+          BACK TO TOP ↑
+        </button>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
