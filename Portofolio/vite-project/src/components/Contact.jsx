@@ -115,7 +115,7 @@ function Contact() {
               <a href="https://instagram.com/jrmy.jp" target="_blank" rel="noopener noreferrer" title="Instagram">
                 <FaInstagram />
               </a>
-              <a href="mailto:jeremyjosephpohar@gmail.com" title="Email">
+              <a href="mailto:jeremy.yosep@gmail.com" title="Email">
                 <FaEnvelope />
               </a>
             </div>
