@@ -6,23 +6,35 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+// Middleware - Updated CORS for production
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Create transporter for sending emails
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use Gmail (or change to your email provider)
+  service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Your email
-    pass: process.env.EMAIL_PASS, // Your email password or App Password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
 // Test route
 app.get('/', (req, res) => {
-  res.json({ message: 'Contact Form API is running!' });
+  res.json({ 
+    message: 'Contact Form API is running!',
+    status: 'healthy',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Health check for deployment platforms
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
 });
 
 // Contact form endpoint
@@ -49,7 +61,7 @@ app.post('/api/contact', async (req, res) => {
   // Email to you (receiving the contact form)
   const mailOptionsToYou = {
     from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER, // Your email
+    to: process.env.EMAIL_USER,
     subject: `Portfolio Contact: Message from ${name}`,
     html: `
       <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
@@ -143,8 +155,14 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({ message: 'Route not found' });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
   console.log(`📧 Email service configured with: ${process.env.EMAIL_USER}`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
