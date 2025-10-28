@@ -24,7 +24,6 @@ Portofolio/backend/node_modules/
 Portofolio/vite-project/node_modules/
 
 # Lock files (optional - some keep these)
-package-lock.json
 yarn.lock
 
 # ============================================
