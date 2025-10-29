@@ -216,3 +216,20 @@ footer {
   z-index: 10; /* Ensure footer is above matrix background */
   background: #000000; /* Add background if not present */
 }
+
+.footer-col ul li.model-credit {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1a1a1a;
+}
+
+.footer-col ul li.model-credit a {
+  color: #808080;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.footer-col ul li.model-credit a:hover {
+  color: #ffffff;
+  opacity: 1;
+}
