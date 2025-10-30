@@ -112,12 +112,25 @@
 .icon-box.cpp { border-color: #00599c; }
 .tech-icon:hover .cpp { background: #00599c; color: #fff; }
 
+/* C# */
 .icon-box.csharp {
-  background: rgba(156, 39, 176, 0.1);
-  border-color: rgba(156, 39, 176, 0.3);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #9c27b0;
+  background: #000;
+  border-color: #239120;
+  color: #239120;
+  font-size: 2.2rem;
+}
+.icon-box.csharp svg {
+  color: inherit;
+  transition: color 0.2s;
+}
+.tech-icon:hover .icon-box.csharp {
+  background: #239120;
+  color: #fff;
+  border-color: #239120;
+  box-shadow: 0 0 80px #23912066;
+}
+.tech-icon:hover .icon-box.csharp svg {
+  color: #fff;
 }
 
 .icon-box.html { border-color: #e34f26; }
@@ -253,40 +266,40 @@
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
 }
 
-/* React Icon - Cyan/Blue */
 .icon-box.react {
-  background: rgba(97, 218, 251, 0.1);
-  border-color: rgba(97, 218, 251, 0.3);
-}
-
-.icon-box.react svg {
+  background: #000;
+  border-color: #61dafb;
   color: #61dafb;
 }
-
+.icon-box.react svg {
+  color: inherit;
+  transition: color 0.2s;
+}
 .tech-icon:hover .icon-box.react {
-  background: rgba(97, 218, 251, 0.15);
+  background: #61dafb;
   border-color: #61dafb;
-  box-shadow: 
-    0 5px 15px rgba(97, 218, 251, 0.2),
-    0 0 30px rgba(97, 218, 251, 0.15);
+  color: #fff;
+}
+.tech-icon:hover .icon-box.react svg {
+  color: #fff;
 }
 
-/* Node.js Icon - Green */
 .icon-box.nodejs {
-  background: rgba(104, 160, 99, 0.1);
-  border-color: rgba(104, 160, 99, 0.3);
-}
-
-.icon-box.nodejs svg {
+  background: #000;
+  border-color: #68a063;
   color: #68a063;
 }
-
+.icon-box.nodejs svg {
+  color: inherit;
+  transition: color 0.2s;
+}
 .tech-icon:hover .icon-box.nodejs {
-  background: rgba(104, 160, 99, 0.15);
+  background: #68a063;
   border-color: #68a063;
-  box-shadow: 
-    0 5px 15px rgba(104, 160, 99, 0.2),
-    0 0 30px rgba(104, 160, 99, 0.15);
+  color: #fff;
+}
+.tech-icon:hover .icon-box.nodejs svg {
+  color: #fff;
 }
 
 /* Download CV Section */
