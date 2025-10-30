@@ -6,30 +6,25 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Create transporter for sending emails
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use Gmail (or change to your email provider)
+  service: 'gmail', 
   auth: {
-    user: process.env.EMAIL_USER, // Your email
-    pass: process.env.EMAIL_PASS, // Your email password or App Password
+    user: process.env.EMAIL_USER, 
+    pass: process.env.EMAIL_PASS, 
   },
 });
 
-// Test route
 app.get('/', (req, res) => {
   res.json({ message: 'Contact Form API is running!' });
 });
 
-// Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
-  // Validation
   if (!name || !email || !message) {
     return res.status(400).json({ 
       success: false, 
@@ -37,7 +32,6 @@ app.post('/api/contact', async (req, res) => {
     });
   }
 
-  // Email validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return res.status(400).json({ 
@@ -46,10 +40,9 @@ app.post('/api/contact', async (req, res) => {
     });
   }
 
-  // Email to you (receiving the contact form)
   const mailOptionsToYou = {
     from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER, // Your email
+    to: process.env.EMAIL_USER, 
     subject: `Portfolio Contact: Message from ${name}`,
     html: `
       <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
@@ -78,7 +71,6 @@ app.post('/api/contact', async (req, res) => {
     `,
   };
 
-  // Auto-reply email to sender
   const mailOptionsToSender = {
     from: process.env.EMAIL_USER,
     to: email,
@@ -124,10 +116,8 @@ app.post('/api/contact', async (req, res) => {
   };
 
   try {
-    // Send email to you
     await transporter.sendMail(mailOptionsToYou);
     
-    // Send auto-reply to sender
     await transporter.sendMail(mailOptionsToSender);
     
     res.status(200).json({ 
@@ -143,7 +133,6 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// Start server
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
   console.log(`📧 Email service configured with: ${process.env.EMAIL_USER}`);

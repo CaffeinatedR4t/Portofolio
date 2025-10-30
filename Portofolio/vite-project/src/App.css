@@ -79,23 +79,19 @@ body {
   z-index: 5;
 }
 
-/* Navbar above everything */
 .navbar {
   z-index: 1000 !important;
 }
 
-/* Footer above breathing overlay */
 footer {
   position: relative;
   z-index: 10;
 }
 
-/* Preloader on top */
 #preloader {
   z-index: 10000 !important;
 }
 
-/* Cursor on top of everything */
 .retro-cursor,
 .cursor-trail {
   z-index: 99999 !important;
