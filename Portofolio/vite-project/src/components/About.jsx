@@ -15,10 +15,11 @@ import {
   SiLaravel, 
   SiMysql, 
   SiGithub, 
-  SiFigma
+  SiFigma,
+  SiUnity
 } from 'react-icons/si'
 
-// Use DiJava for Java and FaCuttlefish for C# (or use text)
+// Use DiJava for Java
 import { DiJava } from 'react-icons/di'
 
 function About() {
@@ -164,6 +165,12 @@ function About() {
                     <SiAndroidstudio />
                   </div>
                   <span>Android Studio</span>
+                </div>
+                <div className="tech-icon">
+                  <div className="icon-box unity">
+                    <SiUnity />
+                  </div>
+                  <span>Unity</span>
                 </div>
                 <div className="tech-icon">
                   <div className="icon-box laravel">

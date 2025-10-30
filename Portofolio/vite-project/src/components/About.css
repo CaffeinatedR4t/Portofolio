@@ -521,3 +521,14 @@
     padding: 1.5rem;
   }
 }
+
+.icon-box.unity { 
+  color: #ffffff; 
+  border-color: #ffffff; 
+}
+
+.tech-icon:hover .icon-box.unity {
+  background: rgb(255, 255, 255);
+  border-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
