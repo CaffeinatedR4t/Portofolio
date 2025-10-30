@@ -246,7 +246,7 @@
 /* Specific colors for each technology */
 .icon-box.ts { color: #3178c6; border-color: #3178c6; }
 .icon-box.js { color: #f7df1e; border-color: #f7df1e; }
-.icon-box.java { color: #007396; border-color: #007396; font-size: 2rem; } /* Emoji */
+.icon-box.java { color: #007396; border-color: #f89820; font-size: 2rem; } /* Emoji */
 .icon-box.python { color: #3776ab; border-color: #3776ab; }
 .icon-box.php { color: #777bb4; border-color: #777bb4; }
 .icon-box.c { color: #a8b9cc; border-color: #a8b9cc; }
@@ -544,4 +544,84 @@
   background: rgb(255, 255, 255);
   border-color: #ffffff;
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Android Studio */
+.icon-box.android {
+  background: #000;
+  border-color: #3ddc84;
+  color: #3ddc84;
+}
+.icon-box.android svg {
+  color: inherit;
+  transition: color 0.2s;
+}
+.tech-icon:hover .icon-box.android {
+  background: #3ddc84;
+  color: #fff;
+  border-color: #3ddc84;
+  box-shadow: 0 0 80px #3ddc8466;
+}
+.tech-icon:hover .icon-box.android svg {
+  color: #fff;
+}
+
+/* Laravel */
+.icon-box.laravel {
+  background: #000;
+  border-color: #ff2d20;
+  color: #ff2d20;
+}
+.icon-box.laravel svg {
+  color: inherit;
+  transition: color 0.2s;
+}
+.tech-icon:hover .icon-box.laravel {
+  background: #ff2d20;
+  color: #fff;
+  border-color: #ff2d20;
+  box-shadow: 0 0 80px #ff2d2066;
+}
+.tech-icon:hover .icon-box.laravel svg {
+  color: #fff;
+}
+
+/* MySQL */
+.icon-box.mysql {
+  background: #000;
+  border-color: #4479a1;
+  color: #4479a1;
+}
+.icon-box.mysql svg {
+  color: inherit;
+  transition: color 0.2s;
+}
+.tech-icon:hover .icon-box.mysql {
+  background: #4479a1;
+  color: #fff;
+  border-color: #4479a1;
+  box-shadow: 0 0 80px #4479a166;
+}
+.tech-icon:hover .icon-box.mysql svg {
+  color: #fff;
+}
+
+/* Figma */
+.icon-box.figma {
+  background: #000;
+  border-color: #f24e1e;
+  color: #f24e1e;
+}
+.icon-box.figma svg {
+  color: inherit;
+  transition: color 0.2s;
+}
+.tech-icon:hover .icon-box.figma {
+  background: #f24e1e;
+  color: #fff;
+  border-color: #f24e1e;
+  box-shadow: 0 0 80px #f24e1e66;
+}
+.tech-icon:hover .icon-box.figma svg {
+  color: #fff;
 }
