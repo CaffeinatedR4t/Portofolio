@@ -1,5 +1,5 @@
 #about {
-  background: #000000; /* Changed from #0a0a0a to match other sections */
+  background: #000000; 
   padding: 100px 0;
   min-height: 100vh;
 }
@@ -31,7 +31,6 @@
   font-weight: 600;
 }
 
-/* Tech Stack */
 .tech-stack {
   margin-bottom: 4rem;
 }
@@ -90,7 +89,6 @@
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
-/* Color variations for different tech */
 .icon-box.ts { border-color: #3178c6; }
 .tech-icon:hover .ts { background: #3178c6; color: #fff; }
 
@@ -112,7 +110,6 @@
 .icon-box.cpp { border-color: #00599c; }
 .tech-icon:hover .cpp { background: #00599c; color: #fff; }
 
-/* C# */
 .icon-box.csharp {
   background: #000;
   border-color: #239120;
@@ -152,7 +149,6 @@
   color: #ffffff;
 }
 
-/* Certifications */
 .certifications-section {
   margin-top: 4rem;
 }
@@ -238,12 +234,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem; /* For SVG icons */
-  font-weight: 700; /* For text/emoji */
+  font-size: 2.5rem;
+  font-weight: 700; 
   transition: all 0.3s ease;
 }
 
-/* Specific colors for each technology */
 .icon-box.ts { color: #3178c6; border-color: #3178c6; }
 .icon-box.js { color: #f7df1e; border-color: #f7df1e; }
 .icon-box.java { color: #007396; border-color: #f89820; font-size: 2rem; } /* Emoji */
@@ -260,7 +255,6 @@
 .icon-box.github { color: #ffffff; border-color: #ffffff; }
 .icon-box.figma { color: #f24e1e; border-color: #f24e1e; }
 
-/* Hover effect */
 .tech-icon:hover .icon-box {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
@@ -302,7 +296,6 @@
   color: #fff;
 }
 
-/* Download CV Section */
 .download-cv-container {
   margin-top: 3rem;
   display: flex;
@@ -352,7 +345,6 @@
   transform: translateY(2px);
 }
 
-/* Glow effect on hover */
 .download-cv-button::before {
   content: '';
   position: absolute;
@@ -377,7 +369,6 @@
   height: 300px;
 }
 
-/* Download Popup Overlay */
 .download-popup-overlay {
   position: fixed;
   top: 0;
@@ -393,7 +384,6 @@
   animation: fadeIn 0.3s ease;
 }
 
-/* Download Popup */
 .download-popup {
   background: #0a0a0a;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -431,7 +421,6 @@
   line-height: 1.6;
 }
 
-/* Popup Buttons */
 .popup-buttons {
   display: flex;
   gap: 1rem;
@@ -470,7 +459,6 @@
   transform: translateY(-2px);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -500,7 +488,6 @@
   }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .download-cv-button {
     padding: 0.8rem 1.8rem;
@@ -546,7 +533,6 @@
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 }
 
-/* Android Studio */
 .icon-box.android {
   background: #000;
   border-color: #3ddc84;
@@ -566,7 +552,6 @@
   color: #fff;
 }
 
-/* Laravel */
 .icon-box.laravel {
   background: #000;
   border-color: #ff2d20;
@@ -586,7 +571,6 @@
   color: #fff;
 }
 
-/* MySQL */
 .icon-box.mysql {
   background: #000;
   border-color: #4479a1;
@@ -606,7 +590,6 @@
   color: #fff;
 }
 
-/* Figma */
 .icon-box.figma {
   background: #000;
   border-color: #f24e1e;

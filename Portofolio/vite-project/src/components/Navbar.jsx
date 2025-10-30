@@ -42,12 +42,10 @@ function Navbar() {
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${visible ? '' : 'navbar-hidden'}`}>
-        {/* Left Side - Logo */}
         <div className="nav-left">
           <ScrambleLogo onClick={closeMobileMenu} />
         </div>
 
-        {/* Mobile Menu Toggle - Arrow */}
         <div 
           className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`} 
           onClick={toggleMobileMenu}
@@ -57,7 +55,6 @@ function Navbar() {
           </span>
         </div>
 
-        {/* Desktop Navigation */}
         <div className="nav-right desktop-nav">
           <CursorPopupLink href="#about" text="ABOUT" popup="ABOUT ME" onClick={closeMobileMenu} />
           <CursorPopupLink href="#projects" text="PROJECTS" popup="FEATURED PROJECTS" onClick={closeMobileMenu} />
@@ -65,7 +62,6 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'active' : ''}`}>
         <div className="mobile-menu-content">
           <MobileNavLink href="#about" text="ABOUT" onClick={closeMobileMenu} />
@@ -77,7 +73,6 @@ function Navbar() {
   )
 }
 
-// Scramble Logo Component
 function ScrambleLogo({ onClick }) {
   const fullName = 'JEREMY JOSEPH POHAR'
   const shortName = 'JJP'
@@ -166,7 +161,6 @@ function ScrambleLogo({ onClick }) {
   )
 }
 
-// Desktop Cursor Following Popup Link
 function CursorPopupLink({ href, text, popup, onClick }) {
   const [displayPopup, setDisplayPopup] = useState(popup)
   const [isHovering, setIsHovering] = useState(false)
@@ -268,7 +262,6 @@ function CursorPopupLink({ href, text, popup, onClick }) {
   )
 }
 
-// Mobile Navigation Link
 function MobileNavLink({ href, text, onClick }) {
   const handleClick = (e) => {
     e.preventDefault()

@@ -17,7 +17,6 @@ function Contact() {
       ...formData,
       [e.target.name]: e.target.value
     })
-    // Clear status when user types
     if (status.message) setStatus({ type: '', message: '' })
   }
 

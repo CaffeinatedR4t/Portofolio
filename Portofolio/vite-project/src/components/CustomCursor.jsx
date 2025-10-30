@@ -13,10 +13,8 @@ function CustomCursor() {
     const handleMouseEnter = () => setIsHovering(true)
     const handleMouseLeave = () => setIsHovering(false)
 
-    // Track mouse movement
     window.addEventListener('mousemove', moveCursor)
 
-    // Track hover on interactive elements
     const interactiveElements = document.querySelectorAll('a, button, .project-card, input, textarea')
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', handleMouseEnter)
@@ -34,7 +32,6 @@ function CustomCursor() {
 
   return (
     <>
-      {/* Retro Pixel Cursor */}
       <div
         className={`retro-cursor ${isHovering ? 'hovering' : ''}`}
         style={{
@@ -42,7 +39,6 @@ function CustomCursor() {
           top: `${position.y}px`,
         }}
       >
-        {/* Pixel cursor shape */}
         <div className="pixel-cursor">
           <div className="pixel-row">
             <span className="pixel"></span>
@@ -55,7 +51,6 @@ function CustomCursor() {
         </div>
       </div>
 
-      {/* Trailing effect (optional) */}
       <div
         className="cursor-trail"
         style={{

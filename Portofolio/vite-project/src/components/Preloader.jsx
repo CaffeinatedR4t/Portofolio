@@ -37,7 +37,6 @@ function Preloader({ onComplete }) {
   return (
     <div id="preloader" className={isComplete ? 'fade-out' : ''}>
       <div className="preloader-container">
-        {/* Loading Bar with percentage on the right */}
         <div className="loader-bar-container">
           <div className="loader-bar">
             <div className="loader-fill" style={{ width: `${progress}%` }}></div>
@@ -45,7 +44,6 @@ function Preloader({ onComplete }) {
           <div className="loader-percentage">{Math.floor(progress)}%</div>
         </div>
 
-        {/* Name and Tagline - Below bar */}
         <div className="loader-branding-bottom">
           <h1 className="loader-name">Jeremy Joseph Pohar</h1>
           <p className="loader-tagline">PORTFOLIO</p>

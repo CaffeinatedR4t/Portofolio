@@ -19,7 +19,6 @@ import {
   SiUnity
 } from 'react-icons/si'
 
-// Use DiJava for Java
 import { DiJava } from 'react-icons/di'
 
 function About() {
@@ -71,7 +70,6 @@ function About() {
             </p>
           </div>
 
-          {/* Tech Stack Section */}
           <div className="tech-stack">
             <div className="tech-category">
               <h3>PROGRAMMING LANGUAGES</h3>
@@ -200,7 +198,6 @@ function About() {
             </div>
           </div>
 
-          {/* Certifications */}
           <div className="certifications-section">
             <h3>Certifications</h3>
             <div className="certifications-grid">
@@ -226,7 +223,6 @@ function About() {
               </div>
             </div>
 
-            {/* Download CV Button */}
             <div className="download-cv-container">
               <button className="download-cv-button" onClick={handleDownloadClick}>
                 <span className="download-icon">📄</span>
@@ -237,7 +233,6 @@ function About() {
         </div>
       </div>
 
-      {/* Download Confirmation Popup */}
       {showDownloadPopup && (
         <div className="download-popup-overlay" onClick={handleCancelDownload}>
           <div className="download-popup" onClick={(e) => e.stopPropagation()}>

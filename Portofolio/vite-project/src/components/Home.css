@@ -192,7 +192,6 @@
   margin: 0;
 }
 
-/* Bottom Right - Status Card */
 .home-bottom-right {
   position: absolute;
   bottom: 3rem;
@@ -246,7 +245,6 @@
   opacity: 0.6;
 }
 
-/* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 3rem;
@@ -277,26 +275,18 @@
   }
 }
 
-/* ========================================
-   RESPONSIVE - TABLETS
-======================================== */
 @media (max-width: 1200px) {
   .model-container {
     width: 60vw;
     height: 60vh;
   }
 
-  /* Slightly taller bar for tablets */
   #home::after {
     height: 150px;
   }
 }
 
-/* ========================================
-   RESPONSIVE - MOBILE (968px and below)
-======================================== */
 @media (max-width: 968px) {
-  /* Taller black bar for mobile */
   #home::after {
     height: 250px;
     background: linear-gradient(to top, #000000 0%, #000000 85%, transparent 100%);
@@ -335,7 +325,6 @@
     display: none;
   }
 
-  /* 3D Model */
   .model-container {
     position: relative !important;
     top: 0 !important;
@@ -416,11 +405,7 @@
   }
 }
 
-/* ========================================
-   RESPONSIVE - SMALL MOBILE
-======================================== */
 @media (max-width: 480px) {
-  /* Even taller black bar for small screens */
   #home::after {
     height: 280px;
   }

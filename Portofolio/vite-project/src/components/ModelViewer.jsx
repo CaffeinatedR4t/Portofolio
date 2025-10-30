@@ -10,11 +10,9 @@ function ModelViewer() {
   useEffect(() => {
     if (!mountRef.current) return
 
-    // Scene Setup
     const scene = new THREE.Scene()
     scene.background = new THREE.Color(0x000000)
 
-    // Camera Setup
     const camera = new THREE.PerspectiveCamera(
       45,
       mountRef.current.clientWidth / mountRef.current.clientHeight,
@@ -23,7 +21,6 @@ function ModelViewer() {
     )
     camera.position.set(0, 0, 6)
 
-    // Renderer Setup
     const renderer = new THREE.WebGLRenderer({ 
       antialias: true,
       alpha: false 
@@ -35,7 +32,6 @@ function ModelViewer() {
     renderer.toneMappingExposure = 1
     mountRef.current.appendChild(renderer.domElement)
 
-    // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.5)
     scene.add(ambientLight)
 
@@ -51,7 +47,6 @@ function ModelViewer() {
     directionalLight3.position.set(0, -3, 5)
     scene.add(directionalLight3)
 
-    // Controls - Horizontal Rotation Only, No Zoom
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enableZoom = false
     controls.enablePan = false
@@ -63,7 +58,6 @@ function ModelViewer() {
     controls.enableDamping = true
     controls.dampingFactor = 0.05
 
-    // Load GLTF Model
     const loader = new GLTFLoader()
     
     console.log('Loading Game Boy model...')
@@ -73,12 +67,10 @@ function ModelViewer() {
       (gltf) => {
         console.log('✅ Model loaded successfully!')
         
-        // Use the ENTIRE scene (console + cartridge together)
         const model = gltf.scene
         
         console.log('Scene children:', model.children.length)
         
-        // Process ALL meshes (to get the complete Game Boy)
         model.traverse((child) => {
           if (child.isMesh) {
             console.log('Mesh:', child.name)
@@ -115,7 +107,6 @@ function ModelViewer() {
           }
         })
         
-        // Calculate bounding box for the ENTIRE model
         const box = new THREE.Box3().setFromObject(model)
         const center = box.getCenter(new THREE.Vector3())
         const size = box.getSize(new THREE.Vector3())
@@ -123,14 +114,12 @@ function ModelViewer() {
         console.log('Complete model size:', size)
         console.log('Complete model center:', center)
         
-        // Scale to fit
         const maxDim = Math.max(size.x, size.y, size.z)
         const targetSize = 4
         const scale = targetSize / maxDim
         
         model.scale.set(scale, scale, scale)
         
-        // Center the complete model
         const scaledCenter = center.multiplyScalar(scale)
         model.position.set(
           -scaledCenter.x,
@@ -150,7 +139,6 @@ function ModelViewer() {
       (error) => {
         console.error('❌ Error loading model:', error)
         
-        // Create fallback cube
         const geometry = new THREE.BoxGeometry(2, 3, 0.5)
         const material = new THREE.MeshStandardMaterial({ 
           color: 0x888888,
@@ -162,7 +150,6 @@ function ModelViewer() {
       }
     )
 
-    // Animation Loop
     const animate = () => {
       requestAnimationFrame(animate)
       controls.update()
@@ -170,7 +157,6 @@ function ModelViewer() {
     }
     animate()
 
-    // Handle Resize
     const handleResize = () => {
       if (!mountRef.current) return
       camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight
@@ -179,7 +165,6 @@ function ModelViewer() {
     }
     window.addEventListener('resize', handleResize)
 
-    // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize)
       if (mountRef.current && renderer.domElement) {

@@ -20,7 +20,6 @@
   visibility: hidden;
 }
 
-/* Container for all preloader elements */
 .preloader-container {
   width: 100%;
   padding: 0 3rem;
@@ -29,7 +28,6 @@
   gap: 0;
 }
 
-/* Bar Container - Bar + Percentage on same line */
 .loader-bar-container {
   display: flex;
   align-items: center;
@@ -38,7 +36,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Loading Bar - Full width, no gaps */
 .loader-bar {
   position: relative;
   flex: 1;
@@ -70,7 +67,6 @@
     0 0 45px rgba(255, 255, 255, 0.1);
 }
 
-/* Bright core */
 .loader-fill::before {
   content: '';
   position: absolute;
@@ -83,7 +79,6 @@
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
-/* Ambient light around bar */
 .loader-bar::before {
   content: '';
   position: absolute;
@@ -100,7 +95,6 @@
   pointer-events: none;
 }
 
-/* Percentage - Right side of bar */
 .loader-percentage {
   font-family: var(--font-accent);
   font-size: clamp(0.85rem, 1.2vw, 1rem);
@@ -124,7 +118,6 @@
   }
 }
 
-/* Branding - Below bar */
 .loader-branding-bottom {
   display: flex;
   align-items: baseline;
@@ -163,7 +156,6 @@
   text-transform: uppercase;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .preloader-container {
     padding: 0 2rem;
