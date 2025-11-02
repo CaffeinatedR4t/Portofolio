@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Lenis from 'lenis'
+import Lenis from '@studio-freight/lenis'
 import Preloader from './components/Preloader'
 import Navbar from './components/Navbar'
 import CustomCursor from './components/CustomCursor'
