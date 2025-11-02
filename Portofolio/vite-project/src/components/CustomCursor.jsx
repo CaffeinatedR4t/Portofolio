@@ -38,16 +38,22 @@ function CustomCursor() {
 
     animate()
 
-    // Use event delegation for better performance
+    // ✅ FIXED: Check if target is an Element before using matches
     const handleMouseEnter = (e) => {
-      if (e.target.matches('a, button, .project-card, input, textarea')) {
-        setIsHovering(true)
+      const target = e.target
+      if (target && target.nodeType === 1) { // Check if it's an Element node
+        if (target.matches('a, button, .project-card, input, textarea')) {
+          setIsHovering(true)
+        }
       }
     }
 
     const handleMouseLeave = (e) => {
-      if (e.target.matches('a, button, .project-card, input, textarea')) {
-        setIsHovering(false)
+      const target = e.target
+      if (target && target.nodeType === 1) { // Check if it's an Element node
+        if (target.matches('a, button, .project-card, input, textarea')) {
+          setIsHovering(false)
+        }
       }
     }
 
