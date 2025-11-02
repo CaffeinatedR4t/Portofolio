@@ -1,43 +1,72 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './CustomCursor.css'
 
 function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const cursorRef = useRef(null)
+  const trailRef = useRef(null)
   const [isHovering, setIsHovering] = useState(false)
-
+  
   useEffect(() => {
+    const cursor = cursorRef.current
+    const trail = trailRef.current
+    
+    if (!cursor || !trail) return
+
+    // Use requestAnimationFrame for smooth performance
+    let mouseX = 0
+    let mouseY = 0
+    let currentX = 0
+    let currentY = 0
+
     const moveCursor = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY })
+      mouseX = e.clientX
+      mouseY = e.clientY
     }
 
-    const handleMouseEnter = () => setIsHovering(true)
-    const handleMouseLeave = () => setIsHovering(false)
+    // Smooth animation loop using RAF (much more performant!)
+    const animate = () => {
+      // Smooth lerp (linear interpolation) for trailing effect
+      currentX += (mouseX - currentX) * 0.2
+      currentY += (mouseY - currentY) * 0.2
 
-    window.addEventListener('mousemove', moveCursor)
+      // Use transform instead of top/left for better performance
+      cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%) ${isHovering ? 'scale(1.3)' : 'scale(1)'}`
+      trail.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`
 
-    const interactiveElements = document.querySelectorAll('a, button, .project-card, input, textarea')
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', handleMouseEnter)
-      el.addEventListener('mouseleave', handleMouseLeave)
-    })
+      requestAnimationFrame(animate)
+    }
+
+    animate()
+
+    // Use event delegation for better performance
+    const handleMouseEnter = (e) => {
+      if (e.target.matches('a, button, .project-card, input, textarea')) {
+        setIsHovering(true)
+      }
+    }
+
+    const handleMouseLeave = (e) => {
+      if (e.target.matches('a, button, .project-card, input, textarea')) {
+        setIsHovering(false)
+      }
+    }
+
+    window.addEventListener('mousemove', moveCursor, { passive: true })
+    document.addEventListener('mouseenter', handleMouseEnter, true)
+    document.addEventListener('mouseleave', handleMouseLeave, true)
 
     return () => {
       window.removeEventListener('mousemove', moveCursor)
-      interactiveElements.forEach(el => {
-        el.removeEventListener('mouseenter', handleMouseEnter)
-        el.removeEventListener('mouseleave', handleMouseLeave)
-      })
+      document.removeEventListener('mouseenter', handleMouseEnter, true)
+      document.removeEventListener('mouseleave', handleMouseLeave, true)
     }
-  }, [])
+  }, [isHovering])
 
   return (
     <>
       <div
+        ref={cursorRef}
         className={`retro-cursor ${isHovering ? 'hovering' : ''}`}
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-        }}
       >
         <div className="pixel-cursor">
           <div className="pixel-row">
@@ -52,11 +81,8 @@ function CustomCursor() {
       </div>
 
       <div
+        ref={trailRef}
         className="cursor-trail"
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-        }}
       />
     </>
   )
