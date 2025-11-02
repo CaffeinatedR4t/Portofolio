@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Lenis from '@studio-freight/lenis'
 import Preloader from './components/Preloader'
 import Navbar from './components/Navbar'
@@ -12,9 +12,11 @@ import './App.css'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
-  const [lenis, setLenis] = useState(null)
+  const lenisRef = useRef(null)
+  const rafIdRef = useRef(null)
 
   useEffect(() => {
+    // Initialize Lenis
     const lenisInstance = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -27,17 +29,18 @@ function App() {
       infinite: false,
     })
 
-    setLenis(lenisInstance)
-
+    lenisRef.current = lenisInstance
     window.lenis = lenisInstance
 
+    // ✅ PROPER RAF LOOP - This is the key fix!
     function raf(time) {
       lenisInstance.raf(time)
-      requestAnimationFrame(raf)
+      rafIdRef.current = requestAnimationFrame(raf)
     }
 
-    requestAnimationFrame(raf)
+    rafIdRef.current = requestAnimationFrame(raf)
 
+    // Handle anchor link clicks
     const handleAnchorClick = (e) => {
       const target = e.target.closest('a[href^="#"]')
       if (!target) return
@@ -59,9 +62,24 @@ function App() {
 
     document.addEventListener('click', handleAnchorClick)
 
+    // ✅ CRITICAL: Proper cleanup to prevent memory leaks and freezing
     return () => {
       document.removeEventListener('click', handleAnchorClick)
-      lenisInstance.destroy()
+      
+      // Cancel the animation frame
+      if (rafIdRef.current) {
+        cancelAnimationFrame(rafIdRef.current)
+      }
+      
+      // Destroy Lenis instance
+      if (lenisRef.current) {
+        lenisRef.current.destroy()
+      }
+      
+      // Clean up global reference
+      if (window.lenis) {
+        delete window.lenis
+      }
     }
   }, [])
 
