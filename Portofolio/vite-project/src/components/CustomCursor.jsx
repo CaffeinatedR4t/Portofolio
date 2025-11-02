@@ -5,6 +5,7 @@ function CustomCursor() {
   const cursorRef = useRef(null)
   const trailRef = useRef(null)
   const [isHovering, setIsHovering] = useState(false)
+  const rafIdRef = useRef(null)
   
   useEffect(() => {
     const cursor = cursorRef.current
@@ -12,7 +13,6 @@ function CustomCursor() {
     
     if (!cursor || !trail) return
 
-    // Use requestAnimationFrame for smooth performance
     let mouseX = 0
     let mouseY = 0
     let currentX = 0
@@ -23,26 +23,22 @@ function CustomCursor() {
       mouseY = e.clientY
     }
 
-    // Smooth animation loop using RAF (much more performant!)
     const animate = () => {
-      // Smooth lerp (linear interpolation) for trailing effect
       currentX += (mouseX - currentX) * 0.2
       currentY += (mouseY - currentY) * 0.2
 
-      // Use transform instead of top/left for better performance
       cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%) ${isHovering ? 'scale(1.3)' : 'scale(1)'}`
       trail.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`
 
-      requestAnimationFrame(animate)
+      rafIdRef.current = requestAnimationFrame(animate)
     }
 
-    animate()
+    rafIdRef.current = requestAnimationFrame(animate)
 
-    // ✅ FIXED: Check if target is an Element before using matches
     const handleMouseEnter = (e) => {
       const target = e.target
-      if (target && target.nodeType === 1) { // Check if it's an Element node
-        if (target.matches('a, button, .project-card, input, textarea')) {
+      if (target && target.nodeType === 1) {
+        if (target.matches('a, button, .project-card, input, textarea, .cta-button, .arrow-button, .status-link')) {
           setIsHovering(true)
         }
       }
@@ -50,8 +46,8 @@ function CustomCursor() {
 
     const handleMouseLeave = (e) => {
       const target = e.target
-      if (target && target.nodeType === 1) { // Check if it's an Element node
-        if (target.matches('a, button, .project-card, input, textarea')) {
+      if (target && target.nodeType === 1) {
+        if (target.matches('a, button, .project-card, input, textarea, .cta-button, .arrow-button, .status-link')) {
           setIsHovering(false)
         }
       }
@@ -65,6 +61,24 @@ function CustomCursor() {
       window.removeEventListener('mousemove', moveCursor)
       document.removeEventListener('mouseenter', handleMouseEnter, true)
       document.removeEventListener('mouseleave', handleMouseLeave, true)
+      if (rafIdRef.current) {
+        cancelAnimationFrame(rafIdRef.current)
+      }
+    }
+  }, []) // ✅ FIXED: Empty dependency array!
+
+  // Separate effect for hover state changes
+  useEffect(() => {
+    const cursor = cursorRef.current
+    if (cursor) {
+      // Update scale without resetting position
+      const currentTransform = cursor.style.transform
+      if (currentTransform) {
+        const match = currentTransform.match(/translate\([^)]+\)[^)]+/)
+        if (match) {
+          cursor.style.transform = `${match[0]} ${isHovering ? 'scale(1.3)' : 'scale(1)'}`
+        }
+      }
     }
   }, [isHovering])
 
