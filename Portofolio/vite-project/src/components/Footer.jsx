@@ -10,7 +10,7 @@ function Footer() {
     if (window.lenis) {
       window.lenis.scrollTo(homeSection, {
         offset: 0,
-        duration: 2.5,
+        duration: 1,
         easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
       })
     } else {
@@ -43,7 +43,7 @@ function Footer() {
       if (window.lenis) {
         window.lenis.scrollTo(contactSection, {
           offset: -80,
-          duration: 2,
+          duration: 1,
           easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
         })
       } else {
