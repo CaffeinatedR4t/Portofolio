@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
 import Preloader from './components/Preloader'
 import Navbar from './components/Navbar'
 import CustomCursor from './components/CustomCursor'
@@ -15,9 +15,8 @@ function App() {
   const [lenis, setLenis] = useState(null)
 
   useEffect(() => {
-    // Initialize Lenis smooth scroll
     const lenisInstance = new Lenis({
-      duration: 1.8,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
@@ -30,7 +29,6 @@ function App() {
 
     setLenis(lenisInstance)
 
-    // Make lenis available globally
     window.lenis = lenisInstance
 
     function raf(time) {
@@ -40,7 +38,6 @@ function App() {
 
     requestAnimationFrame(raf)
 
-    // Handle anchor link clicks for smooth scrolling
     const handleAnchorClick = (e) => {
       const target = e.target.closest('a[href^="#"]')
       if (!target) return
