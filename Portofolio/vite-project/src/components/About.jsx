@@ -24,7 +24,6 @@ import { DiJava } from 'react-icons/di'
 function About() {
   const [showDownloadPopup, setShowDownloadPopup] = useState(false)
 
-  // ✅ FREEZE SCROLL WHEN POPUP IS OPEN
   useEffect(() => {
     if (showDownloadPopup) {
       document.body.style.overflow = 'hidden'
@@ -89,7 +88,7 @@ function About() {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">
-            <span className="title-number">02.</span> ABOUT ME
+            ABOUT ME
           </h2>
           <p className="section-subtitle">Background & expertise</p>
         </div>

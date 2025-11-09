@@ -49,7 +49,7 @@ function Projects() {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">
-            <span className="title-number">03.</span> FEATURED PROJECTS
+            FEATURED PROJECTS
           </h2>
           <p className="section-subtitle">Recent work & academic experience</p>
         </div>

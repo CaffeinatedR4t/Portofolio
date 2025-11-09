@@ -65,7 +65,7 @@ function Contact() {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">
-            <span className="title-number">04.</span> GET IN TOUCH
+            GET IN TOUCH
           </h2>
           <p className="section-subtitle">Let's work together</p>
         </div>

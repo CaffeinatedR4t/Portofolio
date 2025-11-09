@@ -16,7 +16,6 @@ function App() {
   const rafIdRef = useRef(null)
 
   useEffect(() => {
-    // Initialize Lenis
     const lenisInstance = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -32,7 +31,6 @@ function App() {
     lenisRef.current = lenisInstance
     window.lenis = lenisInstance
 
-    // ✅ PROPER RAF LOOP - This is the key fix!
     function raf(time) {
       lenisInstance.raf(time)
       rafIdRef.current = requestAnimationFrame(raf)
@@ -62,21 +60,17 @@ function App() {
 
     document.addEventListener('click', handleAnchorClick)
 
-    // ✅ CRITICAL: Proper cleanup to prevent memory leaks and freezing
     return () => {
       document.removeEventListener('click', handleAnchorClick)
       
-      // Cancel the animation frame
       if (rafIdRef.current) {
         cancelAnimationFrame(rafIdRef.current)
       }
       
-      // Destroy Lenis instance
       if (lenisRef.current) {
         lenisRef.current.destroy()
       }
       
-      // Clean up global reference
       if (window.lenis) {
         delete window.lenis
       }
