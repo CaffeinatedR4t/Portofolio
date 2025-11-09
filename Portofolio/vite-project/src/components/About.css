@@ -76,49 +76,130 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-accent);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.tech-icon:hover .icon-box {
+/* ❌ REMOVE THIS - IT'S BREAKING YOUR COLORS */
+/* .tech-icon:hover .icon-box {
   background: #ffffff;
   color: #000000;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+} */
+
+/* Programming Languages Colors */
+.icon-box.ts { 
+  color: #3178c6; 
+  border-color: #3178c6; 
+}
+.icon-box.ts svg { 
+  color: #3178c6; 
+}
+.tech-icon:hover .ts { 
+  background: #3178c6; 
+  color: #fff; 
+}
+.tech-icon:hover .ts svg { 
+  color: #fff; 
 }
 
-.icon-box.ts { border-color: #3178c6; }
-.tech-icon:hover .ts { background: #3178c6; color: #fff; }
+.icon-box.js { 
+  color: #f7df1e; 
+  border-color: #f7df1e; 
+}
+.icon-box.js svg { 
+  color: #f7df1e; 
+}
+.tech-icon:hover .js { 
+  background: #f7df1e; 
+  color: #000; 
+}
+.tech-icon:hover .js svg { 
+  color: #000; 
+}
 
-.icon-box.js { border-color: #f7df1e; }
-.tech-icon:hover .js { background: #f7df1e; color: #000; }
+.icon-box.java { 
+  color: #f89820; 
+  border-color: #f89820; 
+}
+.icon-box.java svg { 
+  color: #f89820; 
+}
+.tech-icon:hover .java { 
+  background: #f89820; 
+  color: #fff; 
+}
+.tech-icon:hover .java svg { 
+  color: #fff; 
+}
 
-.icon-box.java { border-color: #f89820; }
-.tech-icon:hover .java { background: #f89820; color: #000; }
+.icon-box.python { 
+  color: #3776ab; 
+  border-color: #3776ab; 
+}
+.icon-box.python svg { 
+  color: #3776ab; 
+}
+.tech-icon:hover .python { 
+  background: #3776ab; 
+  color: #fff; 
+}
+.tech-icon:hover .python svg { 
+  color: #fff; 
+}
 
-.icon-box.python { border-color: #3776ab; }
-.tech-icon:hover .python { background: #3776ab; color: #fff; }
+.icon-box.php { 
+  color: #777bb4; 
+  border-color: #777bb4; 
+}
+.icon-box.php svg { 
+  color: #777bb4; 
+}
+.tech-icon:hover .php { 
+  background: #777bb4; 
+  color: #fff; 
+}
+.tech-icon:hover .php svg { 
+  color: #fff; 
+}
 
-.icon-box.php { border-color: #777bb4; }
-.tech-icon:hover .php { background: #777bb4; color: #fff; }
+.icon-box.c { 
+  color: #a8b9cc; 
+  border-color: #a8b9cc; 
+}
+.icon-box.c svg { 
+  color: #a8b9cc; 
+}
+.tech-icon:hover .c { 
+  background: #a8b9cc; 
+  color: #fff; 
+}
+.tech-icon:hover .c svg { 
+  color: #fff; 
+}
 
-.icon-box.c { border-color: #a8b9cc; }
-.tech-icon:hover .c { background: #a8b9cc; color: #000; }
-
-.icon-box.cpp { border-color: #00599c; }
-.tech-icon:hover .cpp { background: #00599c; color: #fff; }
+.icon-box.cpp { 
+  color: #00599c; 
+  border-color: #00599c; 
+}
+.icon-box.cpp svg { 
+  color: #00599c; 
+}
+.tech-icon:hover .cpp { 
+  background: #00599c; 
+  color: #fff; 
+}
+.tech-icon:hover .cpp svg { 
+  color: #fff; 
+}
 
 .icon-box.csharp {
   background: #000;
   border-color: #239120;
   color: #239120;
-  font-size: 2.2rem;
-}
-.icon-box.csharp svg {
-  color: inherit;
-  transition: color 0.2s;
+  font-size: 1.5rem;
 }
 .tech-icon:hover .icon-box.csharp {
   background: #239120;
@@ -126,15 +207,37 @@
   border-color: #239120;
   box-shadow: 0 0 80px #23912066;
 }
-.tech-icon:hover .icon-box.csharp svg {
-  color: #fff;
+
+/* HTML & CSS */
+.icon-box.html { 
+  color: #e34f26; 
+  border-color: #e34f26; 
+}
+.icon-box.html svg { 
+  color: #e34f26; 
+}
+.tech-icon:hover .html { 
+  background: #e34f26; 
+  color: #fff; 
+}
+.tech-icon:hover .html svg { 
+  color: #fff; 
 }
 
-.icon-box.html { border-color: #e34f26; }
-.tech-icon:hover .html { background: #e34f26; color: #fff; }
-
-.icon-box.css { border-color: #1572b6; }
-.tech-icon:hover .css { background: #1572b6; color: #fff; }
+.icon-box.css { 
+  color: #1572b6; 
+  border-color: #1572b6; 
+}
+.icon-box.css svg { 
+  color: #1572b6; 
+}
+.tech-icon:hover .css { 
+  background: #1572b6; 
+  color: #fff; 
+}
+.tech-icon:hover .css svg { 
+  color: #fff; 
+}
 
 .tech-icon span {
   font-family: var(--font-accent);
@@ -149,6 +252,148 @@
   color: #ffffff;
 }
 
+/* Frameworks & Libraries */
+.icon-box.react {
+  background: #000;
+  border-color: #61dafb;
+  color: #61dafb;
+}
+.icon-box.react svg {
+  color: #61dafb;
+}
+.tech-icon:hover .icon-box.react {
+  background: #61dafb;
+  border-color: #61dafb;
+  color: #fff;
+}
+.tech-icon:hover .icon-box.react svg {
+  color: #fff;
+}
+
+.icon-box.nodejs {
+  background: #000;
+  border-color: #68a063;
+  color: #68a063;
+}
+.icon-box.nodejs svg {
+  color: #68a063;
+}
+.tech-icon:hover .icon-box.nodejs {
+  background: #68a063;
+  border-color: #68a063;
+  color: #fff;
+}
+.tech-icon:hover .icon-box.nodejs svg {
+  color: #fff;
+}
+
+/* Tools & Platforms */
+.icon-box.unity { 
+  color: #ffffff; 
+  border-color: #ffffff; 
+}
+.icon-box.unity svg {
+  color: #ffffff;
+}
+.tech-icon:hover .icon-box.unity {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000;
+}
+.tech-icon:hover .icon-box.unity svg {
+  color: #000;
+}
+
+.icon-box.android {
+  background: #000;
+  border-color: #3ddc84;
+  color: #3ddc84;
+}
+.icon-box.android svg {
+  color: #3ddc84;
+}
+.tech-icon:hover .icon-box.android {
+  background: #3ddc84;
+  color: #fff;
+  border-color: #3ddc84;
+  box-shadow: 0 0 80px #3ddc8466;
+}
+.tech-icon:hover .icon-box.android svg {
+  color: #fff;
+}
+
+.icon-box.laravel {
+  background: #000;
+  border-color: #ff2d20;
+  color: #ff2d20;
+}
+.icon-box.laravel svg {
+  color: #ff2d20;
+}
+.tech-icon:hover .icon-box.laravel {
+  background: #ff2d20;
+  color: #fff;
+  border-color: #ff2d20;
+  box-shadow: 0 0 80px #ff2d2066;
+}
+.tech-icon:hover .icon-box.laravel svg {
+  color: #fff;
+}
+
+.icon-box.mysql {
+  background: #000;
+  border-color: #4479a1;
+  color: #4479a1;
+}
+.icon-box.mysql svg {
+  color: #4479a1;
+}
+.tech-icon:hover .icon-box.mysql {
+  background: #4479a1;
+  color: #fff;
+  border-color: #4479a1;
+  box-shadow: 0 0 80px #4479a166;
+}
+.tech-icon:hover .icon-box.mysql svg {
+  color: #fff;
+}
+
+.icon-box.github {
+  background: #000;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.icon-box.github svg {
+  color: #ffffff;
+}
+.tech-icon:hover .icon-box.github {
+  background: #ffffff;
+  color: #000;
+  border-color: #ffffff;
+}
+.tech-icon:hover .icon-box.github svg {
+  color: #000;
+}
+
+.icon-box.figma {
+  background: #000;
+  border-color: #f24e1e;
+  color: #f24e1e;
+}
+.icon-box.figma svg {
+  color: #f24e1e;
+}
+.tech-icon:hover .icon-box.figma {
+  background: #f24e1e;
+  color: #fff;
+  border-color: #f24e1e;
+  box-shadow: 0 0 80px #f24e1e66;
+}
+.tech-icon:hover .icon-box.figma svg {
+  color: #fff;
+}
+
+/* Certifications */
 .certifications-section {
   margin-top: 4rem;
 }
@@ -211,91 +456,7 @@
   border: 1px solid #333;
 }
 
-@media (max-width: 768px) {
-  .tech-icons {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 1rem;
-  }
-
-  .icon-box {
-    width: 70px;
-    height: 70px;
-    font-size: 1.2rem;
-  }
-
-  .certifications-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.tech-icon .icon-box {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight: 700; 
-  transition: all 0.3s ease;
-}
-
-.icon-box.ts { color: #3178c6; border-color: #3178c6; }
-.icon-box.js { color: #f7df1e; border-color: #f7df1e; }
-.icon-box.java { color: #007396; border-color: #f89820; font-size: 2rem; } /* Emoji */
-.icon-box.python { color: #3776ab; border-color: #3776ab; }
-.icon-box.php { color: #777bb4; border-color: #777bb4; }
-.icon-box.c { color: #a8b9cc; border-color: #a8b9cc; }
-.icon-box.cpp { color: #00599c; border-color: #00599c; }
-.icon-box.csharp { color: #239120; border-color: #239120; font-size: 1.5rem; } /* Text */
-.icon-box.html { color: #e34f26; border-color: #e34f26; }
-.icon-box.css { color: #1572b6; border-color: #1572b6; }
-.icon-box.android { color: #3ddc84; border-color: #3ddc84; }
-.icon-box.laravel { color: #ff2d20; border-color: #ff2d20; }
-.icon-box.mysql { color: #4479a1; border-color: #4479a1; }
-.icon-box.github { color: #ffffff; border-color: #ffffff; }
-.icon-box.figma { color: #f24e1e; border-color: #f24e1e; }
-
-.tech-icon:hover .icon-box {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-}
-
-.icon-box.react {
-  background: #000;
-  border-color: #61dafb;
-  color: #61dafb;
-}
-.icon-box.react svg {
-  color: inherit;
-  transition: color 0.2s;
-}
-.tech-icon:hover .icon-box.react {
-  background: #61dafb;
-  border-color: #61dafb;
-  color: #fff;
-}
-.tech-icon:hover .icon-box.react svg {
-  color: #fff;
-}
-
-.icon-box.nodejs {
-  background: #000;
-  border-color: #68a063;
-  color: #68a063;
-}
-.icon-box.nodejs svg {
-  color: inherit;
-  transition: color 0.2s;
-}
-.tech-icon:hover .icon-box.nodejs {
-  background: #68a063;
-  border-color: #68a063;
-  color: #fff;
-}
-.tech-icon:hover .icon-box.nodejs svg {
-  color: #fff;
-}
-
+/* Download CV */
 .download-cv-container {
   margin-top: 3rem;
   display: flex;
@@ -489,6 +650,21 @@
 }
 
 @media (max-width: 768px) {
+  .tech-icons {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+  }
+
+  .icon-box {
+    width: 70px;
+    height: 70px;
+    font-size: 1.2rem;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
   .download-cv-button {
     padding: 0.8rem 1.8rem;
     font-size: 0.8rem;
@@ -520,91 +696,4 @@
   .download-popup {
     padding: 1.5rem;
   }
-}
-
-.icon-box.unity { 
-  color: #ffffff; 
-  border-color: #ffffff; 
-}
-
-.tech-icon:hover .icon-box.unity {
-  background: rgb(255, 255, 255);
-  border-color: #ffffff;
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-}
-
-.icon-box.android {
-  background: #000;
-  border-color: #3ddc84;
-  color: #3ddc84;
-}
-.icon-box.android svg {
-  color: inherit;
-  transition: color 0.2s;
-}
-.tech-icon:hover .icon-box.android {
-  background: #3ddc84;
-  color: #fff;
-  border-color: #3ddc84;
-  box-shadow: 0 0 80px #3ddc8466;
-}
-.tech-icon:hover .icon-box.android svg {
-  color: #fff;
-}
-
-.icon-box.laravel {
-  background: #000;
-  border-color: #ff2d20;
-  color: #ff2d20;
-}
-.icon-box.laravel svg {
-  color: inherit;
-  transition: color 0.2s;
-}
-.tech-icon:hover .icon-box.laravel {
-  background: #ff2d20;
-  color: #fff;
-  border-color: #ff2d20;
-  box-shadow: 0 0 80px #ff2d2066;
-}
-.tech-icon:hover .icon-box.laravel svg {
-  color: #fff;
-}
-
-.icon-box.mysql {
-  background: #000;
-  border-color: #4479a1;
-  color: #4479a1;
-}
-.icon-box.mysql svg {
-  color: inherit;
-  transition: color 0.2s;
-}
-.tech-icon:hover .icon-box.mysql {
-  background: #4479a1;
-  color: #fff;
-  border-color: #4479a1;
-  box-shadow: 0 0 80px #4479a166;
-}
-.tech-icon:hover .icon-box.mysql svg {
-  color: #fff;
-}
-
-.icon-box.figma {
-  background: #000;
-  border-color: #f24e1e;
-  color: #f24e1e;
-}
-.icon-box.figma svg {
-  color: inherit;
-  transition: color 0.2s;
-}
-.tech-icon:hover .icon-box.figma {
-  background: #f24e1e;
-  color: #fff;
-  border-color: #f24e1e;
-  box-shadow: 0 0 80px #f24e1e66;
-}
-.tech-icon:hover .icon-box.figma svg {
-  color: #fff;
 }

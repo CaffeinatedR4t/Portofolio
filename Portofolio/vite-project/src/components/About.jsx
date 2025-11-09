@@ -1,5 +1,5 @@
 import './About.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { 
   SiTypescript, 
   SiJavascript, 
@@ -24,8 +24,50 @@ import { DiJava } from 'react-icons/di'
 function About() {
   const [showDownloadPopup, setShowDownloadPopup] = useState(false)
 
+  // ✅ FREEZE SCROLL WHEN POPUP IS OPEN
+  useEffect(() => {
+    if (showDownloadPopup) {
+      document.body.style.overflow = 'hidden'
+      if (window.lenis) {
+        window.lenis.stop()
+      }
+    } else {
+      document.body.style.overflow = ''
+      if (window.lenis) {
+        window.lenis.start()
+      }
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+      if (window.lenis) {
+        window.lenis.start()
+      }
+    }
+  }, [showDownloadPopup])
+
   const handleDownloadClick = () => {
-    setShowDownloadPopup(true)
+    // ✅ Scroll to Certifications section first
+    const certificationsSection = document.querySelector('.certifications-section')
+    if (certificationsSection) {
+      if (window.lenis) {
+        window.lenis.scrollTo(certificationsSection, {
+          offset: -150,
+          duration: 1.2,
+          easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+          onComplete: () => {
+            setShowDownloadPopup(true)
+          }
+        })
+      } else {
+        certificationsSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        setTimeout(() => {
+          setShowDownloadPopup(true)
+        }, 1000)
+      }
+    } else {
+      setShowDownloadPopup(true)
+    }
   }
 
   const handleConfirmDownload = () => {
@@ -116,30 +158,18 @@ function About() {
                   </div>
                   <span>C++</span>
                 </div>
-              </div>
-            </div>
-
-            <div className="tech-category">
-              <h3>FRAMEWORKS & WEB</h3>
-              <div className="tech-icons">
-                <div className="tech-icon" title="React">
-                  <div className="icon-box react">
-                    <SiReact />
-                  </div>
-                  <span>React</span>
-                </div>
-                <div className="tech-icon" title="Node.js">
-                  <div className="icon-box nodejs">
-                    <SiNodedotjs />
-                  </div>
-                  <span>Node.js</span>
-                </div>
                 <div className="tech-icon" title="C#">
                   <div className="icon-box csharp">
                     C#
                   </div>
                   <span>C#</span>
                 </div>
+              </div>
+            </div>
+
+            <div className="tech-category">
+              <h3>FRAMEWORKS & LIBRARIES</h3>
+              <div className="tech-icons">
                 <div className="tech-icon" title="HTML5">
                   <div className="icon-box html">
                     <SiHtml5 />
@@ -151,6 +181,18 @@ function About() {
                     <SiCss3 />
                   </div>
                   <span>CSS3</span>
+                </div>
+                <div className="tech-icon" title="React">
+                  <div className="icon-box react">
+                    <SiReact />
+                  </div>
+                  <span>React</span>
+                </div>
+                <div className="tech-icon" title="Node.js">
+                  <div className="icon-box nodejs">
+                    <SiNodedotjs />
+                  </div>
+                  <span>Node.js</span>
                 </div>
               </div>
             </div>
