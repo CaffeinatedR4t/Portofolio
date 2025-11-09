@@ -60,21 +60,13 @@ function ModelViewer() {
 
     const loader = new GLTFLoader()
     
-    console.log('Loading Game Boy model...')
-    
     loader.load(
       '/models/game_boy_classic.glb',
       (gltf) => {
-        console.log('✅ Model loaded successfully!')
-        
         const model = gltf.scene
-        
-        console.log('Scene children:', model.children.length)
         
         model.traverse((child) => {
           if (child.isMesh) {
-            console.log('Mesh:', child.name)
-            
             child.castShadow = true
             child.receiveShadow = true
             
@@ -111,9 +103,6 @@ function ModelViewer() {
         const center = box.getCenter(new THREE.Vector3())
         const size = box.getSize(new THREE.Vector3())
         
-        console.log('Complete model size:', size)
-        console.log('Complete model center:', center)
-        
         const maxDim = Math.max(size.x, size.y, size.z)
         const targetSize = 4
         const scale = targetSize / maxDim
@@ -128,17 +117,12 @@ function ModelViewer() {
         )
         
         scene.add(model)
-        console.log('✅ Complete Game Boy added to scene')
       },
-      (progress) => {
-        if (progress.total > 0) {
-          const percent = (progress.loaded / progress.total * 100).toFixed(2)
-          console.log('Loading: ' + percent + '%')
-        }
-      },
+      undefined, // ✅ Removed progress callback - no more loading percentage spam
       (error) => {
         console.error('❌ Error loading model:', error)
         
+        // Fallback cube if model fails to load
         const geometry = new THREE.BoxGeometry(2, 3, 0.5)
         const material = new THREE.MeshStandardMaterial({ 
           color: 0x888888,
