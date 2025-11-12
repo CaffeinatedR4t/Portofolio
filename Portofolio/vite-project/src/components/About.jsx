@@ -46,7 +46,6 @@ function About() {
   }, [showDownloadPopup])
 
   const handleDownloadClick = () => {
-    // ✅ Scroll to Certifications section first
     const certificationsSection = document.querySelector('.certifications-section')
     if (certificationsSection) {
       if (window.lenis) {
@@ -261,6 +260,18 @@ function About() {
                 <h4>Python Intermediate</h4>
                 <p>Sololearn</p>
                 <span className="cert-date">May 2025</span>
+              </div>
+              <div className="cert-card">
+                <div className="cert-icon cert-security">🔒</div>
+                <h4>Cybersecurity Fundamentals</h4>
+                <p>IBM</p>
+                <span className="cert-date">Nov 2025</span>
+              </div>
+              <div className="cert-card">
+                <div className="cert-icon cert-security">🛡️</div>
+                <h4>Getting Started with Cybersecurity</h4>
+                <p>IBM</p>
+                <span className="cert-date">Nov 2025</span>
               </div>
             </div>
 

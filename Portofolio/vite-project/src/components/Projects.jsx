@@ -4,6 +4,15 @@ import './Projects.css'
 const projectsData = [
   {
     id: 1,
+    title: "Cybersecurity Research - XSS Mitigation Framework",
+    description: "Designed and executed experimental testing on PHP-based web applications to identify Reflected, Stored, and DOM-based XSS vulnerabilities. Developed and evaluated prevention frameworks using input validation, output encoding (e.g., htmlspecialchars()), and Content-Security-Policy (CSP) implementation. Strengthened applied understanding of cybersecurity principles, secure coding practices, and OWASP standards.",
+    tags: ["PHP", "Cybersecurity", "XSS", "OWASP", "Research"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+    date: "Jan 2025",
+    role: "Cybersecurity Researcher"
+  },
+  {
+    id: 2,
     title: "Seadex - Export Management Platform",
     description: "A PHP-Laravel based export management platform connecting Indonesian suppliers with global buyers. Integrated front-end interfaces with robust MySQL database systems to streamline product listings and export operations.",
     tags: ["PHP", "Laravel", "MySQL", "Full-Stack"],
@@ -12,7 +21,7 @@ const projectsData = [
     role: "Front-End Developer & Database Engineer"
   },
   {
-    id: 2,
+    id: 3,
     title: "Diabetes Meal Plan Framework",
     description: "Machine learning system designed to predict and manage Type 2 Diabetes through personalized meal recommendations. Built classification models using Python to analyze health and lifestyle data, integrating prediction algorithms with nutritional guidance.",
     tags: ["Python", "Machine Learning", "Data Science", "Healthcare"],
@@ -21,9 +30,9 @@ const projectsData = [
     role: "ML Engineer & Data Scientist"
   },
   {
-    id: 3,
+    id: 4,
     title: "Taman Bacaan Mobile App",
-    description: "Android-based mobile application using Kotlin and Android Studio to support community reading activities through digital access and user engagement. Led the full project lifecycle as Project Manager and Lead Developer.",
+    description: "Android-based mobile application using Kotlin and Android Studio to support community reading activities through digital access and user engagement. Led the full project lifecycle from system design, task delegation, and database integration to UI/UX development and testing.",
     tags: ["Kotlin", "Android Studio", "Mobile Dev", "Leadership"],
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
     date: "Aug 2025 - Present",
@@ -31,9 +40,9 @@ const projectsData = [
     github: "https://github.com/CaffeinatedR4t"
   },
   {
-    id: 4,
+    id: 5,
     title: "AI in Student Learning - Research Paper",
-    description: "Co-authored peer-reviewed study examining the role of Artificial Intelligence in enhancing student learning and programming proficiency. Investigated how AI tools affect comprehension, problem-solving, and critical thinking.",
+    description: "Co-authored peer-reviewed study examining the role of Artificial Intelligence in enhancing student learning and programming proficiency. Investigated how AI tools affect comprehension, problem-solving, and critical thinking in computer science education.",
     tags: ["Research", "AI", "Education", "Academic"],
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop",
     date: "Jan 2025",
