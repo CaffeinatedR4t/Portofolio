@@ -26,10 +26,11 @@ const projectsData = [
     id: 3,
     title: "Seadex - Export Management Platform",
     description: "A PHP-Laravel based export management platform connecting Indonesian suppliers with global buyers. Integrated front-end interfaces with robust MySQL database systems to streamline product listings and export operations.",
-    tags: ["PHP", "Laravel", "MySQL", "Full-Stack"],
+    tags: ["PHP", "Laravel", "MySQL", "Full-Stack", "TailwindCSS"],
     image: '/images/seadex-new.png',
     date: "Nov 2024",
-    role: "Front-End Developer & Database Engineer"
+    role: "Front-End Developer & Database Engineer",
+    github: "https://github.com/CaffeinatedR4t/UAS-WEBPRO-IF330"
   },
   {
     id: 4,
@@ -49,7 +50,7 @@ const projectsData = [
     image: '/images/taman-bacaan.png',
     date: "Aug 2025 - Present",
     role: "Lead Developer & Project Manager",
-    github: "https://github.com/CaffeinatedR4t"
+    github: "https://github.com/CaffeinatedR4t/Project_TamanBacaan"
   },
   {
     id: 6,
