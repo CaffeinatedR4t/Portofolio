@@ -3,18 +3,18 @@ import ModelViewer from './ModelViewer'
 import './Home.css'
 
 function Home() {
-  const [jakartaTime, setJakartaTime] = useState('')
+  const [hours, setHours] = useState('00')
+  const [minutes, setMinutes] = useState('00')
+  const [seconds, setSeconds] = useState('00')
 
   useEffect(() => {
     const updateTime = () => {
       const now = new Date()
-      const jakartaTimeString = now.toLocaleTimeString('en-US', {
-        timeZone: 'Asia/Jakarta',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false
-      })
-      setJakartaTime(jakartaTimeString)
+      const jakartaTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Jakarta' }))
+      
+      setHours(String(jakartaTime.getHours()).padStart(2, '0'))
+      setMinutes(String(jakartaTime.getMinutes()).padStart(2, '0'))
+      setSeconds(String(jakartaTime.getSeconds()).padStart(2, '0'))
     }
 
     updateTime()
@@ -47,11 +47,8 @@ function Home() {
       </div>
 
       <div className="home-top-right">
-        <div className="vertical-time">
-          {jakartaTime.split('').map((char, index) => (
-            <span key={index} className="time-char">{char}</span>
-          ))}
-          <span className="time-label">WIB</span>
+        <div className="rotated-time">
+          {hours}:{minutes}:{seconds} | 6.2088° S, 106.8456° E
         </div>
       </div>
 

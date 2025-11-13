@@ -1,4 +1,3 @@
-/* Home Section */
 #home {
   position: relative;
   width: 100%;
@@ -10,20 +9,18 @@
   justify-content: center;
 }
 
-/* Black Bar Overlay - Blocks Duplicate Model */
 #home::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 120px; /* Reduced for desktop */
+  height: 120px; 
   background: linear-gradient(to top, #000000 0%, #000000 60%, transparent 100%);
   pointer-events: none;
   z-index: 6;
 }
 
-/* Top Left - Title */
 .home-top-left {
   position: absolute;
   top: 6rem;
@@ -49,7 +46,6 @@
   margin: 0;
 }
 
-/* Top Right - Vertical Time */
 .home-top-right {
   position: absolute;
   top: 6rem;
@@ -84,7 +80,6 @@
   text-orientation: mixed;
 }
 
-/* Center - 3D Model */
 .model-container {
   position: absolute;
   top: 50%;
@@ -98,7 +93,6 @@
   clip-path: inset(0);
 }
 
-/* Ensure Canvas is visible */
 .model-container canvas {
   display: block !important;
   width: 100% !important;
@@ -107,7 +101,6 @@
   visibility: visible !important;
 }
 
-/* Bottom Left - CTA Button + Quote */
 .home-bottom-left {
   position: absolute;
   bottom: 3rem;
@@ -458,3 +451,25 @@
     font-size: 0.7rem;
   }
 }
+
+/* Top Right - Rotated Time Display */
+.home-top-right {
+  position: absolute;
+  top: 13rem;
+  right: -2rem;
+  z-index: 10;
+}
+
+.rotated-time {
+  font-family: var(--font-accent);
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  transform: rotate(90deg);
+  transform-origin: center center;
+  line-height: 1;
+}
+
