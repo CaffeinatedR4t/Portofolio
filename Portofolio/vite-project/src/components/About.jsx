@@ -32,10 +32,7 @@ const CSharpLogo = () => (
 
 const RStudioLogo = () => (
   <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-    {/* Blue Circle Background */}
     <circle cx="64" cy="64" r="60" fill="#75aadb"/>
-    
-    {/* White R Letter */}
     <text 
       x="64" 
       y="85" 
@@ -126,11 +123,6 @@ function About() {
             <p className="intro-text">
               I'm a <strong>Bilingual Computer Science student</strong> at Universitas Multimedia Nusantara, 
               fluent in English (CEFR C1) and Indonesian, with a growing specialization in <strong>cybersecurity</strong> and <strong>AI</strong>.
-            </p>
-            <p>
-              Currently working as an <strong>Advanced AI Trainer</strong> at Invisible Technologies (Remote, New York), 
-              I collaborate with globally distributed teams to train and evaluate advanced AI language models, 
-              performing data annotation and quality validation.
             </p>
             <p>
               My academic experience includes developing full-stack web platforms, machine learning systems for healthcare, 
