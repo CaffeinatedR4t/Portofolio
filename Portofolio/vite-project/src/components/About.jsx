@@ -16,7 +16,8 @@ import {
   SiMysql, 
   SiGithub, 
   SiFigma,
-  SiUnity
+  SiUnity,
+  SiThreedotjs
 } from 'react-icons/si'
 
 import { DiJava } from 'react-icons/di'
@@ -200,6 +201,18 @@ function About() {
                   </div>
                   <span>Node.js</span>
                 </div>
+                <div className="tech-icon" title="Three.js">
+                  <div className="icon-box threejs">
+                    <SiThreedotjs />
+                  </div>
+                  <span>Three.js</span>
+                </div>
+                <div className="tech-icon" title="Laravel">
+                  <div className="icon-box laravel">
+                    <SiLaravel />
+                  </div>
+                  <span>Laravel</span>
+                </div>
               </div>
             </div>
 
@@ -217,12 +230,6 @@ function About() {
                     <SiUnity />
                   </div>
                   <span>Unity</span>
-                </div>
-                <div className="tech-icon">
-                  <div className="icon-box laravel">
-                    <SiLaravel />
-                  </div>
-                  <span>Laravel</span>
                 </div>
                 <div className="tech-icon">
                   <div className="icon-box mysql">

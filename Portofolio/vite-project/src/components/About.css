@@ -703,3 +703,21 @@
     padding: 1.5rem;
   }
 }
+
+/* Three.js */
+.icon-box.threejs {
+  background: #000;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.icon-box.threejs svg {
+  color: #ffffff;
+}
+.tech-icon:hover .icon-box.threejs {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000;
+}
+.tech-icon:hover .icon-box.threejs svg {
+  color: #000;
+}
