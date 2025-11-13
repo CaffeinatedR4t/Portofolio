@@ -55,11 +55,11 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-cta">
-        <h2>READY TO DISCUSS<br />YOUR NEXT PROJECT?</h2>
+        <h2>READY TO BUILD<br />RESILIENT SOLUTIONS?</h2>
         <button onClick={scrollToContact} className="arrow-button">
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
             <rect x="1" y="1" width="78" height="78" stroke="currentColor" strokeWidth="1"/>
-            <path d="M25 30 L50 40 L25 50" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <path d="M30 50 L40 25 L50 50" stroke="currentColor" strokeWidth="2" fill="none"/>
           </svg>
         </button>
       </div>

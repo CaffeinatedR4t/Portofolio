@@ -199,13 +199,19 @@
   background: #000;
   border-color: #239120;
   color: #239120;
-  font-size: 1.5rem;
+}
+.icon-box.csharp svg {
+  color: #239120;
+  padding: 18px;
 }
 .tech-icon:hover .icon-box.csharp {
   background: #239120;
   color: #fff;
   border-color: #239120;
   box-shadow: 0 0 80px #23912066;
+}
+.tech-icon:hover .icon-box.csharp svg {
+  color: #fff;
 }
 
 /* HTML & CSS */

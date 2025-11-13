@@ -20,6 +20,14 @@ import {
 } from 'react-icons/si'
 
 import { DiJava } from 'react-icons/di'
+import { TbBrandCSharp } from 'react-icons/tb' 
+
+const CSharpLogo = () => (
+  <svg viewBox="0 0 128 128" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M85.3 76.1c-4.2 7.4-12.2 12.4-21.3 12.4-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6z"/>
+    <path d="M97 66.2l.9-4.3h-4.2v-4.7h5.1l1.2-6.2h4.9l-1.2 6.1h3.8l1.2-6.1h4.8l-1.2 6.1h2.4v4.7h-3.3l-.9 4.3h4.2v4.7h-5.1l-1.2 6.2h-4.9l1.2-6.2h-3.8l-1.2 6.2h-4.8l1.2-6.2h-2.4v-4.7h3.3zm4.8 0h3.8l.9-4.3h-3.8l-.9 4.3z"/>
+  </svg>
+)
 
 function About() {
   const [showDownloadPopup, setShowDownloadPopup] = useState(false)
@@ -158,7 +166,7 @@ function About() {
                 </div>
                 <div className="tech-icon" title="C#">
                   <div className="icon-box csharp">
-                    C#
+                    <CSharpLogo />
                   </div>
                   <span>C#</span>
                 </div>
@@ -277,7 +285,6 @@ function About() {
 
             <div className="download-cv-container">
               <button className="download-cv-button" onClick={handleDownloadClick}>
-                <span className="download-icon">📄</span>
                 Download CV
               </button>
             </div>
