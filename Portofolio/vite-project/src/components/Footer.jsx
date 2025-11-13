@@ -102,11 +102,11 @@ function Footer() {
               <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>ABOUT</a></li>
               <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>CONTACT</a></li>
               <li className="model-credit">
-                <a href="https://skfb.ly/oV6KN" 
+                <a href="https://skfb.ly/6SvyM" 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   title="3D Model by Alice Solo">
-                  3D Model by Alice Solo
+                   title="3D Model by Vivien Deroche">
+                  3D Model by Vivien Deroche
                 </a>
               </li>
             </ul>
