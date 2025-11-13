@@ -721,3 +721,41 @@
 .tech-icon:hover .icon-box.threejs svg {
   color: #000;
 }
+
+/* Jupyter Notebook */
+.icon-box.jupyter {
+  background: #000;
+  border-color: #f37726;
+  color: #f37726;
+}
+.icon-box.jupyter svg {
+  color: #f37726;
+}
+.tech-icon:hover .icon-box.jupyter {
+  background: #f37726;
+  color: #fff;
+  border-color: #f37726;
+  box-shadow: 0 0 80px #f3772666;
+}
+.tech-icon:hover .icon-box.jupyter svg {
+  color: #fff;
+}
+
+/* RStudio */
+.icon-box.rstudio {
+  background: #000;
+  border-color: #75aadb;
+  color: #75aadb;
+}
+.icon-box.rstudio svg {
+  color: #75aadb;
+}
+.tech-icon:hover .icon-box.rstudio {
+  background: #75aadb;
+  color: #fff;
+  border-color: #75aadb;
+  box-shadow: 0 0 80px #75aadb66;
+}
+.tech-icon:hover .icon-box.rstudio svg {
+  color: #fff;
+}

@@ -17,11 +17,11 @@ import {
   SiGithub, 
   SiFigma,
   SiUnity,
-  SiThreedotjs
+  SiThreedotjs,
+  SiJupyter
 } from 'react-icons/si'
 
 import { DiJava } from 'react-icons/di'
-import { TbBrandCSharp } from 'react-icons/tb' 
 
 const CSharpLogo = () => (
   <svg viewBox="0 0 128 128" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -30,6 +30,26 @@ const CSharpLogo = () => (
   </svg>
 )
 
+const RStudioLogo = () => (
+  <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    {/* Blue Circle Background */}
+    <circle cx="64" cy="64" r="60" fill="#75aadb"/>
+    
+    {/* White R Letter */}
+    <text 
+      x="64" 
+      y="85" 
+      fontSize="64" 
+      fontWeight="700" 
+      fontFamily="'Helvetica Neue', Arial, sans-serif" 
+      textAnchor="middle" 
+      fill="white"
+      style={{ letterSpacing: '-2px' }}
+    >
+      R
+    </text>
+  </svg>
+)
 function About() {
   const [showDownloadPopup, setShowDownloadPopup] = useState(false)
 
@@ -230,6 +250,18 @@ function About() {
                     <SiUnity />
                   </div>
                   <span>Unity</span>
+                </div>
+                <div className="tech-icon" title="Jupyter Notebook">
+                  <div className="icon-box jupyter">
+                    <SiJupyter />
+                  </div>
+                  <span>Jupyter</span>
+                </div>
+                <div className="tech-icon" title="RStudio">
+                  <div className="icon-box rstudio">
+                    <RStudioLogo />
+                  </div>
+                  <span>RStudio</span>
                 </div>
                 <div className="tech-icon">
                   <div className="icon-box mysql">
