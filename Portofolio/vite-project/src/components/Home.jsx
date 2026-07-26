@@ -67,7 +67,7 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: easeOutExpo }}
       >
-        <h1 className="sr-only">Jeremy Joseph Pohar - Web Developer & AI Trainer Portfolio</h1>
+        <h1 className="sr-only">Jeremy Joseph Pohar - Full-Stack Developer, Cybersecurity Enthusiast & AI Integration Portfolio</h1>
         <h2>Jeremy Joseph Pohar</h2>
         <p>JAKARTA, INDONESIA</p>
       </motion.div>
