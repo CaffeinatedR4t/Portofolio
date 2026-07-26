@@ -382,8 +382,8 @@
 
   /* Stack everything at the bottom on small screens */
   .home-bottom-left {
-    bottom: auto;
-    top: 50%;
+    bottom: 8rem;
+    top: auto;
     left: 50%;
     right: auto;
     transform: translateX(-50%);

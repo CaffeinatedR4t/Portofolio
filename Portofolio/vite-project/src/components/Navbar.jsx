@@ -64,9 +64,10 @@ function Navbar({ onAboutClick }) {
           className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
           onClick={toggleMobileMenu}
         >
-          <span className="arrow-icon">
-            {mobileMenuOpen ? '▲' : '▼'}
-          </span>
+          <div className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </nav>
 
@@ -99,9 +100,10 @@ function Navbar({ onAboutClick }) {
           className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
           onClick={toggleMobileMenu}
         >
-          <span className="arrow-icon">
-            {mobileMenuOpen ? '▼' : '▲'} 
-          </span>
+          <div className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </nav>
 
@@ -253,10 +255,10 @@ function MobileNavLink({ href, text, onClick }) {
   }
 
   return (
-    <a href={href} className="mobile-nav-link" onClick={handleClick}>
-      <span className="mobile-link-bracket">[</span>
-      {text}
-      <span className="mobile-link-bracket">]</span>
+    <a href={href} className="lamalama-mobile-link" onClick={handleClick}>
+      <div className="lamalama-link-inner">
+        <span className="lamalama-link-text">{text}</span>
+      </div>
     </a>
   )
 }

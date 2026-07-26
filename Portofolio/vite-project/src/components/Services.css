@@ -73,6 +73,12 @@
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  .service-text-item h3 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+}
+
 .services-image-col {
   width: 35%;
   position: relative;
