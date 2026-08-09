@@ -13,14 +13,15 @@
   top: 0;
   height: 100vh;
   display: flex;
-  align-items: center; /* Perfectly center everything vertically */
+  align-items: flex-start;  /* Pin content toward the top instead of dead-center */
+  padding-top: 10vh;        /* Slight offset so it's not flush against the top */
   overflow: hidden;
 }
 
 .services-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* Top-align so header sits above image level */
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
@@ -29,6 +30,8 @@
 
 .services-text-col {
   width: 65%;
+  min-width: 0;        /* Allow flex child to shrink below content size */
+  overflow: hidden;    /* Clip any content that still exceeds the column */
   display: flex;
   flex-direction: column;
 }
@@ -70,21 +73,18 @@
   margin: 0;
   line-height: 1.1;
   text-align: left;
-  white-space: nowrap;
+  white-space: normal;  /* Wrap instead of overflowing into the image column */
 }
 
-@media (max-width: 768px) {
-  .service-text-item h3 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-  }
-}
-
+/* ===== Image Column (desktop defaults) ===== */
 .services-image-col {
   width: 35%;
+  flex-shrink: 0;      /* Never compress the image column */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-top: calc(5vh + 1.5rem + 4vh); /* Match the header space so image aligns with titles */
 }
 
 .services-image-wrapper {
@@ -127,8 +127,108 @@
   font-weight: 500;
 }
 
+/* ===== Tablet: 769px – 1024px ===== */
 @media (max-width: 1024px) {
   .service-text-item h3 {
     white-space: normal;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .services-text-col {
+    width: 60%;
+  }
+
+  .services-image-col {
+    width: 40%;
+  }
+
+  .services-image-wrapper {
+    max-width: 350px;
+    height: 40vh;
+  }
+
+  .service-image-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Mobile: 768px and below ===== */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3vh;
+    padding: 0 6vw;
+  }
+
+  .services-text-col {
+    width: 100%;
+    order: 2;
+  }
+
+  .services-header {
+    padding-top: 2vh;
+    margin-bottom: 2vh;
+  }
+
+  .services-header h2 {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+  }
+
+  .service-text-item {
+    margin-bottom: 0.5vh;
+  }
+
+  .service-text-item h3 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    white-space: normal;
+    line-height: 1.15;
+  }
+
+  .services-image-col {
+    width: 100%;
+    order: 1;
+    justify-content: center;
+    margin-top: 0; /* Reset desktop offset when stacked */
+  }
+
+  .services-image-wrapper {
+    max-width: 100%;
+    height: 30vh;
+  }
+
+  .service-image-card img {
+    aspect-ratio: 16/10;
+  }
+
+  .service-image-card p {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== Small mobile: 480px and below ===== */
+@media (max-width: 480px) {
+  .services-section {
+    height: 250vh;
+  }
+
+  .services-container {
+    gap: 2vh;
+    padding: 0 5vw;
+  }
+
+  .service-text-item h3 {
+    font-size: clamp(1.2rem, 7vw, 2rem);
+  }
+
+  .services-image-wrapper {
+    height: 25vh;
+  }
+
+  .service-image-card p {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
   }
 }
